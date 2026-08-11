@@ -13,6 +13,8 @@ To recreate figures, follow the steps below to install required python packages 
     source venv/bin/activate
   
     pip install matplotlib seaborn pandas numpy pyarrow
+
+    mkdir ./figures
   
     ./create_figures.py
 
