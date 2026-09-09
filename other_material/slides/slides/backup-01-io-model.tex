@@ -1,0 +1,16 @@
+\begin{frame}[noframenumbering]{Performance Ceiling: I/O Cost Model}
+  \begin{align*}
+    V_{\text{VA}} &= \frac{D \cdot N \cdot 3}{8}
+      && \text{\small VA-file volume, 3 bits per dimension}\\[1.2em]
+    V_{\text{inv}} &= \sum_{\text{Teams}}\sum_{\text{Leaves}} |\text{Leaf}|
+      && \text{\small measured compressed leaf volume}\\[1.2em]
+    \text{BW}_{\text{rand}} &= 4096 \cdot 2 \times 10^{6}
+                             \approx 8.2\,\text{GB/s}
+      && \text{\small 4\,KiB random read}\\[1.2em]
+    \text{BW}_{\text{seq}} &= 14\,\text{GB/s}
+      && \text{\small sequential read}\\[1.2em]
+    \frac{\text{BW}_{\text{seq}}}{\text{BW}_{\text{rand}}}
+      &= \frac{14}{8.2} \approx 1.7
+      && \text{\small random-to-sequential gap (Kioxia CM7-R 2TB)}\\[1.2em]
+  \end{align*}
+\end{frame}

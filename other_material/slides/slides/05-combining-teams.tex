@@ -1,0 +1,11 @@
+\begin{frame}{Combining multiple Teams}
+%%% This slide illustrates how a bunch of selected leafs across multiple Teams imply a set algebra expression and also a query plan for the execution of the intersection.
+\only<1>{
+    \begin{align*}
+    \Bigl(\,\bigcup \text{IDX}_1(i)\Bigr)
+        \cap \Bigl(\,\bigcup \text{IDX}_2(j)\Bigr)
+        \cap \Bigl(\,\bigcup \text{IDX}_3(k)\Bigr)\\
+    \end{align*}
+}
+\input{figures/team-combination-plan}
+\end{frame}

@@ -1,0 +1,24 @@
+\begin{frame}{Dimensional Scaling}
+%%% Here we show that we indeed scale linearly out to high dimensional queries (85 dimensions).
+%%% We also show the trade-off between selectivity (per attribute) and runtime, and compare the runtime with a hypothetical VA-file scan (which is ideally bound by PCIe bandwidth).
+%%% The cross overpoint between VA file style access and inverted access depends mostly on random vs. sequential access speeds
+%%% (Lastly, we show the impact of using correlation in Team composition over random Teams, which causes both degradation and improvement.)
+\only<1>{\centering\includegraphics[height=0.8\textheight]{figures/generated/dimensional_scaling_comparison_1}}
+\only<2>{\centering\includegraphics[height=0.8\textheight]{figures/generated/dimensional_scaling_comparison_2}}
+\only<3>{\centering\includegraphics[height=0.8\textheight]{figures/generated/dimensional_scaling_comparison_3}}
+\only<4>{\centering\includegraphics[height=0.8\textheight]{figures/generated/dimensional_scaling_comparison_4}}
+\begin{tikzpicture}[remember picture,overlay]
+    
+		% \node[overlay callout,draw,fill=color1!70,anchor=pointer,
+		% 	callout relative pointer={(230:1.1cm)},text width=2.8cm]
+		% 	at ($(current page text area.north east)+(-2.3cm,-3.5cm)$)
+		% 	{$8^5$ grid indices};
+	
+	\only<4>{
+		\node[overlay callout,draw,fill=black!30,anchor=pointer,
+			callout relative pointer={(130:1.1cm)},text width=2.5cm]
+			at ($(current page text area.north east)+(-2.5cm,-4.8cm)$)
+			{VA-file PCIe bound!};
+	}	
+\end{tikzpicture}
+\end{frame}

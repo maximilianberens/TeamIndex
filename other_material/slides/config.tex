@@ -1,0 +1,82 @@
+% --- Enable notes ---
+% \setbeameroption{show notes} % allow \note{} content
+
+% --- Show notes on second screen (right of main slides) ---
+% \setbeameroption{show notes on second screen=right}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{pifont}
+\usepackage{caption}
+
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{shapes,calc,decorations.pathreplacing,decorations.pathmorphing,arrows.meta,shapes.geometric,shapes.callouts}
+\usetikzlibrary{positioning,fit,patterns,trees,backgrounds,matrix,overlay-beamer-styles,tikzmark,fadings}
+ 
+% Shared palette, derived from the grid-index figures.
+\definecolor{color1}{HTML}{4357AD}
+\definecolor{color2}{HTML}{48A9A6}
+\definecolor{color3}{HTML}{E4DFDA}
+\definecolor{color4}{HTML}{D4B483}
+\definecolor{color5}{HTML}{C1666B}
+
+\def\pagecolor{color4}
+\def\cellcolor{black}
+\def\pagebuffercolor{color4}
+\def\volumecolor{color2}
+\def\imbalancecolor{color4}
+\def\overheadcolor{color5}
+\def\ttopacity{1}
+
+\tikzset{
+  my callout style/.style={
+    draw=none, rectangle callout, anchor=pointer,
+    callout relative pointer={(320:1.5cm)},
+    rounded corners, align=center, opacity=\ttopacity
+  },
+  overlay callout/.style={
+    draw=none, rectangle callout,
+    callout relative pointer={(320:1.5cm)},
+    rounded corners, align=center, opacity=\ttopacity
+  },
+  iconW/.store in=\iconW, iconW=4cm,
+  iconH/.store in=\iconH, iconH=4cm,
+  barrel/.style={
+    draw, gray!70!black, fill=\volumecolor,
+    shape=cylinder, shape border rotate=90,
+    aspect=0.35, minimum width=9mm, minimum height=11mm, line width=0.6pt
+  },
+  leafbox/.style={
+    draw=gray!70!black, fill=\overheadcolor, rounded corners=0.9pt,
+    minimum width=4mm, minimum height=4mm, line width=0.5pt
+  },
+  gridcell/.style={
+    draw=gray!70!black, fill=color3, rounded corners=0.9pt,
+    minimum width=4mm, minimum height=4mm, line width=0.5pt
+  },
+  beam/.style={line width=0.9pt},
+  loadL/.style={
+    draw=gray!70!black, fill=\imbalancecolor, line width=0.6pt,
+    minimum width=8mm, minimum height=7mm
+  },
+  loadR/.style={
+    draw=gray!70!black, fill=\imbalancecolor, line width=0.6pt,
+    minimum width=5mm, minimum height=5mm
+  },
+  fulcrum/.style={draw, fill=black!15, line width=0.6pt},
+  iconbox/.style={
+    minimum width=\iconW, minimum height=\iconH,
+    inner sep=0, outer sep=0, draw=none
+  },
+  halo arrow/.style={
+    ->, >=Stealth, line width=2pt, draw=black, line cap=round
+  }
+}

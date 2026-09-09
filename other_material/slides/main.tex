@@ -1,0 +1,36 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+
+\input{config}
+
+\usetheme[numbering=fraction]{metropolis}
+
+\usetheme{default}
+\setbeamercolor{background canvas}{bg=white}
+\setmainfont{Source Sans Pro}
+
+\title{Index Intersection\\for High-Dimensional Range Queries}
+\author{\textbf{Max Berens} \& Jens Teubner}
+\date{52nd International Conference on Very Large Data Bases $\cdot$ Boston, MA, USA $\cdot$ 2026}
+
+\begin{document}
+\maketitle
+
+% Main deck
+\input{slides/01-motivation-range-queries}
+\input{slides/02-motivation-index-extremes}
+\input{slides/03-team-indexing}
+\input{slides/04-grid-index}
+\input{slides/05-combining-teams}
+\input{slides/06-trade-off}
+\input{slides/07-dimensional-scaling}
+\input{slides/08-towards-ideal-performance}
+\input{slides/09-optimization-opportunities}
+
+% Appendix
+\appendix
+\section{Backup Slides}
+\input{slides/backup-01-io-model}
+% \input{slides/backup-02-dimensional-scaling}
+
+\end{document}

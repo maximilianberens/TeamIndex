@@ -1,0 +1,37 @@
+\begin{frame}{Trade-Off: Overhead vs. Volume}
+%%% This slide presents results and directly shows the trade-off between accessed data volume, the per-leaf cost explosion and the respective runtime for various "configurations" of our toy index data structure.
+%%% Parameter variations indicate how "precision" and "Team size (dimensionality per index)" impact performance.
+%%% We also see that per-predicate selectivity impacts access volume, too.
+%%% Moreover, we see the differences across random Team compositions for the same "configuration".
+\only<1>{
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/generated/vol_vs_overhead_comparison_1}
+\end{figure}
+\column{0.4\textwidth}
+Table/Index:
+\begin{itemize}
+    \item $16$ Attributes, $1.22$ B tuples
+    \item $\approx 150$ GB
+    \item $10^d$ grid per Team
+\end{itemize}
+\vfill
+Queries:
+\begin{itemize}
+\item \textbf{Selective}: $0.2$ per pred.
+\item \textbf{Less Sel.}: $0.2$--$0.8$ per pred.
+\end{itemize}
+\end{columns}
+}
+\only<2>{\centering\includegraphics[height=0.82\textheight]{figures/generated/vol_vs_overhead_comparison_2}}
+\only<3>{\centering\includegraphics[height=0.82\textheight]{figures/generated/vol_vs_overhead_comparison_3}}
+\only<4>{\centering\includegraphics[height=0.82\textheight]{figures/generated/vol_vs_overhead_comparison_4}}
+\only<5>{\centering\includegraphics[height=0.82\textheight]{figures/generated/runtime_comparison_1}}
+\only<6>{\centering\includegraphics[height=0.82\textheight]{figures/generated/runtime_comparison_2}}
+\end{frame}
+
+\begin{frame}{Storage Costs}
+\centering\includegraphics[height=0.82\textheight]{figures/generated/storage_comparison}
+\end{frame}

@@ -1,0 +1,17 @@
+\begin{frame}{Performance Ceiling: I/O Throughput (Calculated!)}
+\centering
+\includegraphics[height=0.8\textheight]{figures/generated/dimensional_scaling_io_bandwidth}
+
+\begin{tikzpicture}[remember picture,overlay]
+    \only<2>{
+		\node[overlay callout,draw,fill=color2!70,anchor=pointer,
+			callout relative pointer={(240:1.1cm)},text width=2.5cm]
+			at ($(current page text area.east)+(-3.9cm,1.45cm)$)
+			{12.8 GB sequential!};
+        \node[overlay callout,draw,fill=color2!70,anchor=pointer,
+			callout relative pointer={(110:1.9cm)},text width=2.5cm]
+			at ($(current page text area.east)+(-3.9cm,-0.75cm)$)
+			{0.125 GB random!};
+	}
+\end{tikzpicture}
+\end{frame}

@@ -1,0 +1,60 @@
+% Adapted from https://tex.stackexchange.com/a/648945 (CC BY-SA 4.0).
+% This path runs from the outer to the inner radius with a genuine jigsaw tab
+% (or its matching cutout), rather than overlaying a tab on a finished sector.
+\newcommand{\OutlookPuzzleSide}[1]{%
+  (-0.55,#1*0.00) .. controls (-0.55,#1*0.00) and (-0.12,#1*-0.05) ..
+  (-0.12,#1*0.05) .. controls (-0.12,#1*0.14) and (-0.32,#1*0.30) ..
+  (0.0,#1*0.30) .. controls (0.32,#1*0.30) and (0.12,#1*0.14) ..
+  (0.12,#1*0.05) .. controls (0.12,#1*-0.05) and (0.55,#1*0.00) ..
+  (0.55,#1*0.00)%
+}
+\newcommand{\OutlookPuzzlePiece}[6]{%
+  \path[draw=#1!82!black, fill=#1, line width=1pt, line join=round]
+    {[rotate=#2] [shift={(1.10,0)}] \OutlookPuzzleSide{#4}}
+    arc[start angle=#2, end angle=#3, radius=1.65]
+    {[rotate=#3] [shift={(1.10,0)}] [rotate=180] -- \OutlookPuzzleSide{#5}}
+    arc[start angle=#3, end angle=#2, radius=0.55] -- cycle;
+  \node[font=\small\bfseries, text=white, align=center]
+    at ({(#2+#3)/2}:1.05) {#6};%
+}
+
+\begin{frame}{Outlook / Towards Ideal Performance of Team-based Indexing}
+\begin{columns}[c,onlytextwidth]
+    \begin{column}{0.64\textwidth}
+        \centering
+        % Scale the completed construction, rather than its coordinate axes,
+        % so that the rotated tab paths retain their intended geometry.
+        \begin{tikzpicture}
+            \useasboundingbox (-3.65cm,-2.75cm) rectangle (3.65cm,2.75cm);
+            \begin{scope}[xscale=2.15, yscale=1.50]
+                \uncover<1->{\OutlookPuzzlePiece{color1}{135}{225}{-1}{1}{Operate\\at Scale}}
+                \uncover<2->{\OutlookPuzzlePiece{color1}{225}{315}{-1}{1}{Execution\\Engine}}
+                \uncover<3->{\OutlookPuzzlePiece{color2}{-45}{45}{-1}{1}{Index\\Co-Design}}
+                \uncover<4->{\OutlookPuzzlePiece{color2}{45}{135}{-1}{1}{Team\\Composition}}
+                \uncover<1->{\node[font=\small\bfseries, text=black!65, align=center]
+                    at (0,0.1) {Ideal\\Performance};}
+            \end{scope}
+        \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+        \small
+        General:
+        \begin{itemize}\setlength{\itemsep}{0.5em}
+            \uncover<1->{\item \textcolor{color1}{Amortise per-Leaf overhead}}
+            \uncover<2->{\item \textcolor{color1}{Optimise intersection plan execution}}
+        \end{itemize}
+        \uncover<3->{Domain-specific:}
+        \begin{itemize}\setlength{\itemsep}{0.5em}
+            \uncover<3->{\item \textcolor{color2}{Leverage bounded leaf counts and compression}}
+            \uncover<4->{\item \textcolor{color2}{Improve on random Teams via domain knowledge}}
+        \end{itemize}
+    \end{column}
+\end{columns}
+% \begin{tikzpicture}[remember picture, overlay]
+%     \uncover<4->{%
+%         \node[fill=black!80, rounded corners=2pt, minimum height=0.58cm,
+%             inner xsep=1.0cm, font=\large\bfseries, text=white]
+%             at ($(current page text area.south west)+(2cm,-0.00cm)$) {The end. Thanks!};%
+%     }
+% \end{tikzpicture}
+\end{frame}
